@@ -1,0 +1,34 @@
+# Prj 2
+Write a new CPU scheduling policy-weighted round robin for kernel
+
+changed file
+
+sched.h			/include/linux/ 
+sched.h			/kernel/sched/  
+core.c			/kernel/sched/ 
+wrr.c			/kernel/sched/ 
+Android.mk		/test/jni/      makefile
+test_sched		/test/jni/	TestFile
+
+
+
+two major structure wrr_rq and sched_wrr_entity
+wrr_rq is defined in kernel/sched/sched.h    almost same with rt_rq
+sched_wrr_entity is defined in include/linux/sched.h    almost same with sched_rt_entity
+
+
+
+
+Among the various methods defined sched_class, our wrr_sched_class uses the following:
+enqueue_task
+dequeue_task
+pick_next_task
+task_tick
+switched_to
+get_rr_interval
+
+```shell
+make 
+adb push ~/jni/libs/ameabi/test  /data/misc
+emulator -avd OsPrj-516021910695 -kernel ~/kernel/goldfish/arch/arm/tool/zImage -show-kernel
+ 
