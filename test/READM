@@ -1,0 +1,5 @@
+# Prj2
+test file for testing the new CPU scheduling policy-weighted round robin
+
+type ndk-build , then you will get the excutable file in /jni/libs/armaebi/
+adb push ~/jni/libs/armaebi/test /data/misc
